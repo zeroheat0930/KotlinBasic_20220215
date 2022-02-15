@@ -22,9 +22,31 @@ class MainActivity : AppCompatActivity() {
 
         btnToast.setOnClickListener{
      // 토스트 버튼이 눌리면, Toast를 만들고 (makeText) 보여주기 (show)
-            Toast.makeText(this,"토스트를 띄워봅시다.", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this,"토스트를 띄워봅시다.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "토스트 자동완성으로 활용", Toast.LENGTH_SHORT).show()
         }
 
+        btnVariable.setOnClickListener {
+            // 변수에 대한 문법 연습용 코드
+
+//            본인의 이름을 변수에 담아보자. => 토스트로 띄우자.
+
+            var myName = "정동준"
+            val girlfriend = "김민지"
+//            val girfriend : String
+//            girfriend = "왜안됨"
+//            girfriend = "김민지" val에는 새 값 교체 불가
+
+
+            Toast.makeText(this, myName, Toast.LENGTH_SHORT).show()
+
+            var myBirthYear = 1992
+
+            var myHeight = 181.3
+
+
+
+        }
 
     }
 }
