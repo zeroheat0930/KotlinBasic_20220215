@@ -54,23 +54,54 @@ class MainActivity : AppCompatActivity() {
             val userAge = 15
             // 사용자의 나이가 20살 이상? 맞으면 성인입니다를 토스트로 띄워봄
 
-            if (userAge>=20){
+            if (userAge >= 20) {
 
                 //사용자 나이가 20살 이상일때만 실행할 내용
                 Toast.makeText(this, "성인입니다.", Toast.LENGTH_SHORT).show()
-            } else if(userAge>= 17){
+            } else if (userAge >= 17) {
                 Toast.makeText(this, "고등학생입니다.", Toast.LENGTH_SHORT).show()
-            } else if(userAge >=14){
+            } else if (userAge >= 14) {
 //                17살 미만, 14살 이상.
                 Toast.makeText(this, "중학생입니다.", Toast.LENGTH_SHORT).show()
-            } else if(userAge >=8){
+            } else if (userAge >= 8) {
                 Toast.makeText(this, "초등학생입니다.", Toast.LENGTH_SHORT).show()
-            }
-            else{
+            } else {
 //                위의 모든 질문이 다 틀렸을때만 실행할 내용
                 Toast.makeText(this, "미취학 아동입니다.", Toast.LENGTH_SHORT).show()
             }
 
         }
+
+        btnCondition2.setOnClickListener {
+
+//            회사 상황
+            val salary = 3600
+            val minutes = 50
+            val overwork = true
+
+
+//            취업 조건.
+//            1. 연봉 3000이상 AND 출퇴근시간 30분 이내
+
+            if (salary >= 3000 && minutes < 30) {
+                Log.d("조건문2", "연봉과 출퇴근 거리가 모두 OK인 상황")
+            }
+
+//            2. 연봉 3500 이상 OR 출퇴근시간10분 이내
+            if (salary >= 3500 || minutes < 10) {
+                Log.d("조건문2", "연봉이나 출퇴근 거리 중 하나가 OK")
+            }
+
+//            3. 야근만 안하면 됨
+            if (!overwork) {
+                Log.d("조건문2", "야근을 안해야 OK")
+            }
+
+//        4. 연봉은 2800이상 AND 출퇴근시간 30분 이내 AND 야근 없어야함
+            if (salary > 2800 && minutes < 30 && !overwork) {
+                Log.d("조건문2", "연봉과 출퇴근 거리와 야근여부 모두 만족")
+            }
+        }
+
     }
 }
