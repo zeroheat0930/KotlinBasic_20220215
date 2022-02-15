@@ -12,16 +12,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // btnLog가 눌리면 어떤 코드를 실행할지, 할 일을 설정.
-        btnLog.setOnClickListener{
+        btnLog.setOnClickListener {
 
             // 로그를 찍어보는 기능 실행. => btnLog가 클릭될 떄 마다 실행.
-            Log.d("메인화면","로그 버튼 눌림")
-            Log.d("메인화면","추가 로그 찍어보기")
-            Log.e("메인화면","e로 로그 찍기")
-}
+            Log.d("메인화면", "로그 버튼 눌림")
+            Log.d("메인화면", "추가 로그 찍어보기")
+            Log.e("메인화면", "e로 로그 찍기")
+        }
 
-        btnToast.setOnClickListener{
-     // 토스트 버튼이 눌리면, Toast를 만들고 (makeText) 보여주기 (show)
+        btnToast.setOnClickListener {
+            // 토스트 버튼이 눌리면, Toast를 만들고 (makeText) 보여주기 (show)
 //            Toast.makeText(this,"토스트를 띄워봅시다.", Toast.LENGTH_SHORT).show()
             Toast.makeText(this, "토스트 자동완성으로 활용", Toast.LENGTH_SHORT).show()
         }
@@ -45,8 +45,24 @@ class MainActivity : AppCompatActivity() {
             var myHeight = 181.3
 
 
-
         }
 
+        btnCondition.setOnClickListener {
+
+            //조건문 연습
+
+            val userAge = 17
+            // 사용자의 나이가 20살 이상? 맞으면 성인입니다를 토스트로 띄워봄
+
+            if (userAge>=20){
+
+                //사용자 나이가 20살 이상일때만 실행할 내용
+                Toast.makeText(this, "성인입니다.", Toast.LENGTH_SHORT).show()
+            } else{
+//                위의 질문이 틀렸을때만 실행할 내용
+                Toast.makeText(this, "미성년자입니다.", Toast.LENGTH_SHORT).show()
+            }
+
+        }
     }
 }
